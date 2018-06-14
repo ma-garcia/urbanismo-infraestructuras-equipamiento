@@ -73,7 +73,7 @@ Este vocabulario sufrirá cambios continuados hasta que se consiga un acuerdo su
         <dcterms:hasFormat rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/equipamiento.owl"/>
         <vann:preferredNamespaceUri rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/equipamiento#"/>
 		<vann:preferredNamespacePrefix>esequip</vann:preferredNamespacePrefix>
-        <owl:versionIRI rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/equipamiento/0.1"/>
+        <owl:versionIRI rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/equipamiento"/>
     </owl:Ontology>
 
 
