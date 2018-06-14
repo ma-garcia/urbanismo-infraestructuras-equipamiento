@@ -1,0 +1,217 @@
+@prefix : <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/equipamiento#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/equipamiento> .
+
+<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/equipamiento> rdf:type owl:Ontology ;
+                                                                                        owl:versionIRI <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/equipamiento/0.1> ;
+                                                                                        <http://creativecommons.org/ns#license> <http://creativecommons.org/licenses/by/4.0/> ;
+                                                                                        <http://purl.org/dc/elements/1.1/creator> "Enrique Crespo (Ayuntamiento de Madrid)"^^xsd:string ,
+                                                                                                                                  "Esther Minguela (Localidata)"^^xsd:string ,
+                                                                                                                                  "José María Díez (Ayuntamiento de Burgos)"^^xsd:string ,
+                                                                                                                                  "María Jesús Fernández Ruíz (Ayuntamiento de Zaragoza)"^^xsd:string ,
+                                                                                                                                  "Oscar Corcho (Ontology Engineering Group - Universidad Politécnica de Madrid, LocaliData)"^^xsd:string ;
+                                                                                        <http://purl.org/dc/elements/1.1/date> "2015-06-25"^^xsd:dateTime ;
+                                                                                        <http://purl.org/dc/elements/1.1/identifier> "http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/equipamiento"^^xsd:dateTime ;
+                                                                                        <http://purl.org/dc/elements/1.1/rights> "Creative Commons Attribution 4.0 International (CC BY 4.0)"^^xsd:string ;
+                                                                                        <http://purl.org/dc/elements/1.1/title> "Vocabulario para la representación de datos sobre equipamientos de una ciudad"@es ;
+                                                                                        <http://purl.org/dc/terms/description> """Vocabulario para la representación de datos de equipamientos de una ciudad. Este vocabulario ha sido desarrollado en el contexto del grupo CTN178 GT3.1 sobre datos abiertos y ciudades inteligentes. El estado del vocabulario es todavía muy inicial y sufrirá cambios, sobre todo relacionados con la inclusión de nuevos tipos de equipamientos que por sus características sea interesante incluir explícitamente.
+Reutiliza términos de varios vocabularios y modelos que actualmente se utilizan para propósitos similares (y por tanto se irá actualizando de acuerdo con la evolución de estos vocabularios), incluyendo:
+- schema.org
+- geoNames
+Este vocabulario sufrirá cambios continuados hasta que se consiga un acuerdo suficiente sobre los términos que se incluyen en ella. """^^xsd:string ;
+                                                                                        <http://purl.org/dc/terms/hasFormat> <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/equipamiento.html> ,
+                                                                                                                             <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/equipamiento.owl> ;
+                                                                                        <http://purl.org/dc/terms/issued> "2015-06-25"^^xsd:dateTime ;
+                                                                                        <http://purl.org/dc/terms/title> "Vocabulario para la representación de datos sobre equipamientos de una ciudad"@es ;
+                                                                                        <http://purl.org/vocab/vann/preferredNamespacePrefix> "esequip"^^xsd:string ;
+                                                                                        <http://purl.org/vocab/vann/preferredNamespaceUri> : ;
+                                                                                        rdfs:comment """Vocabulario para la representación de datos de equipamientos de una ciudad. Este vocabulario ha sido desarrollado en el contexto del grupo CTN178 GT3.1 sobre datos abiertos y ciudades inteligentes. El estado del vocabulario es todavía muy inicial y sufrirá cambios, sobre todo relacionados con la inclusión de nuevos tipos de equipamientos que por sus características sea interesante incluir explícitamente.
+Reutiliza términos de varios vocabularios y modelos que actualmente se utilizan para propósitos similares (y por tanto se irá actualizando de acuerdo con la evolución de estos vocabularios), incluyendo:
+- schema.org
+- geoNames
+Este vocabulario sufrirá cambios continuados hasta que se consiga un acuerdo suficiente sobre los términos que se incluyen en ella. """^^xsd:string ;
+                                                                                        owl:versionInfo "Esta es la versión inicial de la ontología sobre equipamientos que surge del trabajo del grupo de expertos del grupo de AENOR CTN178 GT3.1. De momento sólo incluye aparcamientos como un tipo especial de equipamiento, y progresivamente se irán incluyendo nuevos tipos de equipamientos."@es .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#isDefinedBy
+rdfs:isDefinedBy rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://geonames.org/ontology#featureClass
+<http://geonames.org/ontology#featureClass> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf <http://purl.org/dc/terms/type> .
+
+
+###  http://geonames.org/ontology#featureCode
+<http://geonames.org/ontology#featureCode> rdf:type owl:ObjectProperty ;
+                                           rdfs:subPropertyOf <http://purl.org/dc/terms/type> .
+
+
+###  http://purl.org/dc/terms/type
+<http://purl.org/dc/terms/type> rdf:type owl:ObjectProperty .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/equipamiento#numPlazas
+:numPlazas rdf:type owl:ObjectProperty ;
+           rdfs:domain <http://schema.org/CivicStructure> ;
+           rdfs:range <http://geonames.org/ontology#Feature> ;
+           <http://purl.org/dc/terms/issued> "2015-06-25"^^xsd:dateTime ;
+           rdfs:comment "número de plazas de un aparcamiento (puede tomar el valor 1 en el caso de plazas específicas)"@es ;
+           rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/equipamiento> ;
+           rdfs:label "número de plazas"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/equipamiento#tipoAccesibilidad
+:tipoAccesibilidad rdf:type owl:ObjectProperty ;
+                   rdfs:domain <http://schema.org/CivicStructure> ;
+                   rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> ;
+                   <http://purl.org/dc/terms/issued> "2015-06-25"^^xsd:dateTime ;
+                   rdfs:comment "Propiedad que representa el tipo de accesibilidad del equipamiento. Generalmente, se tratará de un término definido en algún SKOS"@es ;
+                   rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/equipamiento> ;
+                   rdfs:label "tipo de accesibilidad"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/equipamiento#tipoEquipamiento
+:tipoEquipamiento rdf:type owl:ObjectProperty ;
+                  rdfs:range [ owl:intersectionOf ( <http://www.w3.org/2004/02/skos/core#Concept>
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty <http://www.w3.org/2004/02/skos/core#inScheme> ;
+                                                      owl:hasValue <http://vocab.linkeddata.es/datosabiertos/kos/urbanismo-infraestructuras/tipo-equipamiento>
+                                                    ]
+                                                  ) ;
+                               rdf:type owl:Class
+                             ] ;
+                  <http://purl.org/dc/terms/issued> "2015-06-25"^^xsd:dateTime ;
+                  rdfs:comment "tipo de equipamiento (aparcamiento, museo, centro cívico, polideportivo, etc.)"@es ;
+                  rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/equipamiento> ;
+                  rdfs:label "tipo de equipamiento"@es .
+
+
+###  http://www.w3.org/2004/02/skos/core#inScheme
+<http://www.w3.org/2004/02/skos/core#inScheme> rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/equipamiento#accesible
+:accesible rdf:type owl:DatatypeProperty ;
+           rdfs:domain <http://schema.org/CivicStructure> ;
+           rdfs:range xsd:boolean ;
+           <http://purl.org/dc/terms/issued> "2014-06-25"^^xsd:dateTime ;
+           rdfs:comment "Propiedad que representa si el aparcamiento está en un lugar accesible o no"@es ;
+           rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/equipamiento> ;
+           rdfs:label "accesible"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/equipamiento#modoAcceso
+:modoAcceso rdf:type owl:DatatypeProperty ;
+            <http://purl.org/dc/terms/issued> "2015-06-25"^^xsd:dateTime ;
+            rdfs:comment "descripción sobre la forma de acceder al equipamiento"@es ;
+            rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/equipamiento> ;
+            rdfs:label "modo de acceso"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/equipamiento#titularidad
+:titularidad rdf:type owl:DatatypeProperty ;
+             rdfs:domain <http://schema.org/CivicStructure> ;
+             rdfs:range xsd:string ;
+             <http://purl.org/dc/terms/issued> "2015-06-25"^^xsd:dateTime ;
+             rdfs:comment "Titularidad del equipamiento.  De momento se sugiere representar esta información mediante una cadena de caracteres, con valores como público, privado, mixto, aunque probablemente se utilice finalmente una clasificación SKOS desarrollada al efecto."@es ;
+             rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/turismo/lugar> ;
+             rdfs:label "titularidad del equipamiento"@es .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://geonames.org/ontology#Feature
+<http://geonames.org/ontology#Feature> rdf:type owl:Class .
+
+
+###  http://schema.org/CivicStructure
+<http://schema.org/CivicStructure> rdf:type owl:Class .
+
+
+###  http://schema.org/ParkingFacility
+<http://schema.org/ParkingFacility> rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://schema.org/CivicStructure> .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/equipamiento#Aparcamiento
+:Aparcamiento rdf:type owl:Class ;
+              rdfs:subClassOf <http://geonames.org/ontology#Feature> ,
+                              <http://schema.org/ParkingFacility> ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty <http://geonames.org/ontology#featureClass> ;
+                                owl:hasValue <http://geonames.org/ontology#S>
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty <http://geonames.org/ontology#featureCode> ;
+                                owl:hasValue <http://geonames.org/ontology#S.PKLT>
+                              ] ;
+              <http://purl.org/dc/terms/issued> "2015-06-25"^^xsd:dateTime ;
+              rdfs:comment "Aparcamiento de cualquier tipo (público, privado, en superficie, etc.) que se puede encontrar en una ciudad."@es ;
+              rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/equipamiento> ;
+              rdfs:label "Aparcamiento"@es .
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> rdf:type owl:Class .
+
+
+###  http://www.w3.org/2004/02/skos/core#ConceptScheme
+<http://www.w3.org/2004/02/skos/core#ConceptScheme> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://geonames.org/ontology#S
+<http://geonames.org/ontology#S> rdf:type owl:NamedIndividual ,
+                                          owl:Thing .
+
+
+###  http://geonames.org/ontology#S.PKLT
+<http://geonames.org/ontology#S.PKLT> rdf:type owl:NamedIndividual ,
+                                               owl:Thing .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/kos/urbanismo-infraestructuras/tipo-equipamiento
+<http://vocab.linkeddata.es/datosabiertos/kos/urbanismo-infraestructuras/tipo-equipamiento> rdf:type owl:NamedIndividual ,
+                                                                                                     <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+
+
+[ rdfs:label "RDF"^^xsd:string
+] .
+
+[ rdfs:label "HTML"^^xsd:string
+ ] .
+
+###  Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/
